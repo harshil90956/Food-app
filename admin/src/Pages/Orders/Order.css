@@ -1,0 +1,121 @@
+.order-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    justify-content: space-between;
+    gap: 10px; 
+    border: 1px solid tomato;
+    padding: 15px; 
+    margin: 20px 0; 
+    font-size: 14px;
+    color: #505050;
+}
+
+.order-item img {
+    width: 40px; 
+    height: auto;
+}
+
+.order-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.order-item-food,
+.order-item-name,
+.order-item-address,
+.order-item-phone,
+.order-item-amount,
+.order-item-status {
+    margin: 0;
+}
+
+.order-item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.order-item-amount,
+.order-item-select {
+    margin-left: auto;
+}
+zc
+.order-item-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+    align-items: flex-end;
+}
+
+.order-item-food, .order-item-name {
+    font-weight: 600;
+}
+
+.order-item-name {
+    margin-top: 15px; 
+    margin-bottom: 5px;
+}
+
+.order-item-address {
+    margin-bottom: 10px;
+}
+
+.order-item select {
+    background-color: #ffe8e4;
+    border: 1px solid tomato;
+    width: max(10vw, 120px);
+    padding: 8px; 
+    outline: none;
+    font-size: 12px;
+}
+@media (max-width: 1000px) {
+    .order-item {
+        font-size: 12px;
+        gap: 5px; 
+        padding: 10px 5px; 
+    }
+    .order-item select {
+        padding: 5px;
+        font-size: 10px;
+    }
+    .order-item img {
+        width: 30px; /* Reduced width */
+    }
+}
+
+@media (max-width: 768px) {
+    .order-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        font-size: 12px;
+        gap: 10px; /* Adjust gap */
+        padding: 10px; /* Adjust padding */
+    }
+    .order-item select {
+        width: 100%; /* Full width */
+        padding: 5px;
+        font-size: 10px; /* Adjust font size */
+    }
+    .order-item img {
+        width: 50px; /* Adjust width */
+    }
+}
+
+@media (max-width: 480px) {
+    .order-item {
+        font-size: 10px;
+        gap: 5px; /* Adjust gap */
+        padding: 8px; /* Adjust padding */
+    }
+    .order-item select {
+        width: 100%; /* Full width */
+        padding: 4px;
+        font-size: 8px; /* Adjust font size */
+    }
+    .order-item img {
+        width: 30px; /* Adjust width */
+    }
+}
