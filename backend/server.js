@@ -19,8 +19,11 @@ const port = 4000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
-
+app.use(cors({
+    origin: '*', // Allows requests from any origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }));
 const sessionOptions = {
     secret:"mysecraetforsession",
     resave:false,
