@@ -8,7 +8,7 @@ dotenv.config();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY); // Ensure this key is correct
 
-const frontend_url = "http://localhost:5174";
+const frontend_url = "https://frontend-8jj4.onrender.com";
 
 const placOrder = async (req, res) => {
     
