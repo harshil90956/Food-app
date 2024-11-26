@@ -19,39 +19,23 @@ const port = 4000;
 
 // Middleware
 app.use(express.json());
-
 app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or Postman)
-        if (!origin) return callback(null, true);
-
-        if (allowedOrigins.includes(origin)) {
-            callback(null, true); // Origin is allowed
-        } else {
-            console.error(`CORS blocked for origin: ${origin}`);
-            callback(new Error("Not allowed by CORS")); // Origin not allowed
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-    credentials: true, // Allow cookies or sessions
-}));
-
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }));
 const sessionOptions = {
-    secret: "mysecraetforsession",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3), // Expires in 3 days
-        maxAge: 1000 * 60 * 60 * 24 * 3, // 3 days in milliseconds
-        httpOnly: true, // Accessible only by web servers
-        secure: true, // Only send cookies over HTTPS
-        sameSite: "none", // Required for cross-origin cookies
-    },
-};
+    secret:"mysecraetforsession",
+    resave:false,
+    saveUninitialized:true,
+    cookie:{
+        expires:Date.now() * 1000 * 60 * 60 * 24 * 3,
+        maxAge: 1000 * 60 * 60 * 24 * 3,
+        httpOnly:true,
+    }
+}
 
-// Use the session middleware
-app.use(session(sessionOptions));
+app.use(session(sessionOptions))
 
 app.get("/get",(req,res)=>{
     res.send("ok done");
