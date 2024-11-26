@@ -19,10 +19,6 @@ const port = 4000;
 
 // Middleware
 app.use(express.json());
-const allowedOrigins = [
-    "https://food-app-1-92yc.onrender.com", 
-    "https://frontend-8jj4.onrender.com"
-];
 
 app.use(cors({
     origin: function (origin, callback) {
