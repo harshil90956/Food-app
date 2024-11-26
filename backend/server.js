@@ -26,7 +26,7 @@ const allowedOrigins = [
 
 app.use(cors({
     origin: function (origin, callback) {
-        // Allow requests with no origin (mobile apps or Postman)
+        // Allow requests with no origin (like mobile apps or Postman)
         if (!origin) return callback(null, true);
 
         if (allowedOrigins.includes(origin)) {
@@ -56,7 +56,6 @@ const sessionOptions = {
 
 // Use the session middleware
 app.use(session(sessionOptions));
-
 
 app.get("/get",(req,res)=>{
     res.send("ok done");
