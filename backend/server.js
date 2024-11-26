@@ -19,39 +19,7 @@ const port = 4000;
 
 // Middleware
 app.use(express.json());
-const allowedOrigins = [
-    "https://food-app-1-92yc.onrender.com", 
-    "https://frontend-8jj4.onrender.com"
-];
 
-app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
-        if (!origin) return callback(null, true);
-        
-        if (allowedOrigins.includes(origin)) {
-            callback(null, true); // Origin is allowed
-        } else {
-            callback(new Error("Not allowed by CORS")); // Origin not allowed
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-    credentials: true, // Allow cookies or sessions
-}));
-
-const sessionOptions = {
-    secret:"mysecraetforsession",
-    resave:false,
-    saveUninitialized:true,
-    cookie:{
-        expires:Date.now() * 1000 * 60 * 60 * 24 * 3,
-        maxAge: 1000 * 60 * 60 * 24 * 3,
-        httpOnly:true,
-    }
-}
-
-app.use(session(sessionOptions))
 
 app.get("/get",(req,res)=>{
     res.send("ok done");
