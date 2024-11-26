@@ -8,7 +8,6 @@ Built with the MERN stack (MongoDB, Express.js, React.js, Node.js), this app pro
 
 ### **For Users (Frontend)**
 
-- **Browse Restaurants**: View a wide selection of restaurants, including their menu, prices, and ratings.
 - **Search and Filter**: Search for specific dishes or filter restaurants by cuisine, rating, or price range.
 - **Order Food**: Select items, customize your order (if applicable), and add them to the cart.
 - **Track Order Status**: Users can track the status of their orders in real-time, from preparation to delivery.
@@ -53,9 +52,6 @@ You can view the live demo of the Food App here:
 
 ### 1. **User Features (Frontend)**
 
-#### **Browse Restaurants**
-- Users can explore a wide range of restaurants, view their menus, and check prices and ratings.
-- Each restaurant's page includes a list of dishes, ingredients, prices, and other relevant details.
 
 #### **Search and Filter**
 - Users can search for specific dishes or restaurants and filter results based on cuisine type, price range, or ratings.
@@ -95,19 +91,3 @@ You can view the live demo of the Food App here:
 
 #### **Admin Authentication & Authorization**
 - The admin panel is protected by JWT authentication, and only authorized users with admin credentials can access the admin dashboard.
-
-## Installation
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- MongoDB
-- npm or yarn
-
-### Setup Instructions
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/food-app.git
-   cd food-app
