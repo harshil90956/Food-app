@@ -18,7 +18,7 @@ const StoreContextProvider = (props) => {
             setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         }
         if (token) {
-            await axios.post(`${url}/api/cart/add`, { itemId }, { headers: { token } });
+            await axios.post(`${url}/api/cart/add`, { itemId }, { withCredentials: true },{ headers: { token } });
         }
     }
 
@@ -26,7 +26,7 @@ const StoreContextProvider = (props) => {
     const removeFromCart = async (itemId) => {
         setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] - 1 }));
         if (token) {
-            await axios.post(`${url}/api/cart/remove`, { itemId }, { headers: { token } });
+            await axios.post(`${url}/api/cart/remove`, { itemId },{ withCredentials: true }, { headers: { token } });
         }
     }
 
@@ -44,13 +44,13 @@ const StoreContextProvider = (props) => {
 
     // Fetch food list
     const fethFoodList = async () => {
-        const response = await axios.get(`${url}/api/food/list`);
+        const response = await axios.get(`${url}/api/food/list`,{ withCredentials: true });
         setFood_list(response.data.data);
     }
 
     // Load cart data
     const loadCartData = async (token) => {
-        const response = await axios.post(`${url}/api/cart/get`, {}, { headers: { token } });
+        const response = await axios.post(`${url}/api/cart/get`, {},{ withCredentials: true }, { headers: { token } });
         setCartItems(response.data.cartData);
     }
 

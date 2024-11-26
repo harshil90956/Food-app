@@ -11,7 +11,7 @@ const Myorders = () => {
 
    const fetchOrders = async () => {
       try {
-         const response = await axios.post(url + "/api/order/userOrders", {}, { headers: { token } });
+         const response = await axios.post(url + "/api/order/userOrders", {},{ withCredentials: true }, { headers: { token } });
 
          // Log the full response to see its structure
          console.log('Full Response:', response);
